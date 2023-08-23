@@ -13,13 +13,11 @@ export class SellerAuthComponent {
 
 constructor(private seller:SellerService ,  private router:Router){}
 
-signUp(data:Signup):void{
-
-this.seller.userSignup(data).subscribe((result)=>{
-if(result){
-  this.router.navigate(['seller-home'])
+ngOnit():void{
+  this.seller.reloadSeller()
 }
 
-});
+signUp(data:Signup):void{
+this.seller.userSignup(data);
 }
 }

@@ -13,11 +13,29 @@ export class SellerAuthComponent {
 
 constructor(private seller:SellerService ,  private router:Router){}
 
+showLogin=false;
+
 ngOnit():void{
   this.seller.reloadSeller()
 }
 
 signUp(data:Signup):void{
 this.seller.userSignup(data);
+console.log(data);
+
+}
+
+login(data:Signup):void{
+  // this.seller.userSignup(data);
+  console.log(data);
+  
+  }
+
+openLogin(){
+ this.showLogin = true;
+}
+
+openSignUp(){
+  this.showLogin = false;
 }
 }
